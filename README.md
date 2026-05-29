@@ -117,8 +117,3 @@ python -m intent_service.server
 - Replace `Video demo URL: <PASTE_YOUR_DEMO_VIDEO_LINK_HERE>` with your actual demo link before submitting.
 - If you use a public GitHub repository for grading, make sure the files under `banking-service/` are pushed together with this README.
 
------
-
-If you want, I can also:
-- Add `checkpoints/final_model` into this package (large files), or
-- Create a zip archive of `banking-service/` ready for upload.

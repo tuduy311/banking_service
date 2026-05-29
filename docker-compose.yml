@@ -1,0 +1,69 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: banking-backend
+    ports:
+      - "8000:8000"
+    environment:
+      INTENT_SERVICE_HOST: intent-service
+      INTENT_SERVICE_PORT: 50051
+      INTENT_SERVICE_TIMEOUT: 10
+      OLLAMA_BASE_URL: http://ollama:11434
+      ENABLE_LOCAL_INTENT_FALLBACK: "true"
+    depends_on:
+      - intent-service
+      - ollama
+    networks:
+      - public_net
+      - internal_net
+
+  intent-service:
+    build:
+      context: .
+      dockerfile: intent_service/Dockerfile
+    container_name: intent-service
+    ports:
+      - "50051:50051"
+    environment:
+      GRPC_PORT: 50051
+      INTENT_MODEL_ID: lab2-intent-v1
+      INTENT_MODEL_PATH: /models/final_model
+    networks:
+      - internal_net
+    volumes:
+      - ./checkpoints/final_model:/models/final_model:ro
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: banking-frontend
+    ports:
+      - "8501:8501"
+    environment:
+      API_BASE_URL: http://backend:8000
+    depends_on:
+      - backend
+    networks:
+      - public_net
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: banking-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    networks:
+      - internal_net
+
+networks:
+  public_net:
+    name: banking_public_net
+  internal_net:
+    name: banking_internal_net
+
+volumes:
+  ollama_data:

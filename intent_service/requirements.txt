@@ -1,0 +1,11 @@
+grpcio==1.71.0
+grpcio-tools==1.71.0
+pydantic==2.9.2
+requests==2.32.3
+transformers==4.44.2
+python-dotenv==1.0.1
+protobuf==5.29.6
+torch==2.4.1+cpu
+accelerate>=0.30,<2
+pyyaml>=6,<7
+safetensors>=0.4

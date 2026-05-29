@@ -1,0 +1,6 @@
+# Top-level pointer: service-specific requirements are under each service folder.
+# Install per-service as needed.
+
+- backend/requirements.txt
+- intent_service/requirements.txt
+- frontend/requirements.txt

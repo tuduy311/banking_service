@@ -1,0 +1,18 @@
+[
+  {
+    "customer_id": "C001",
+    "message": "My transfer failed 20 minutes ago and money was debited from my account"
+  },
+  {
+    "customer_id": "C002",
+    "message": "I opened my card 2 weeks ago but still not received"
+  },
+  {
+    "customer_id": "C003",
+    "message": "My account is blocked and I cannot login"
+  },
+  {
+    "customer_id": "C004",
+    "message": "I want a refund for unauthorized card transaction"
+  }
+]

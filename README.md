@@ -17,7 +17,7 @@ Quick checklist (matches `input.md` requirements):
 - Instructions to build Docker images and run with Docker Compose: included below.
 - Example requests for demonstration: `examples/sample_requests.json`.
 
-Video demo URL: (add your recorded demo URL here)
+Video demo URL: <https://drive.google.com/drive/folders/15V56y_cG-nsURJvH1JeZLGVOvRzfPpvo?usp=sharing>
 
 -----
 
@@ -112,9 +112,10 @@ python -m intent_service.server
 ## Notes on submission
 
 - The model checkpoint (`checkpoints/final_model`) is not included by default due to size. You can:
-	- Provide the checkpoint folder when pushing, or
-	- Host it externally and update `docker-compose.yml` to mount or download at container start.
-- Add your video demo URL to the top of this file before submitting.
+  - Provide the checkpoint folder when pushing, or
+  - Host it externally and update `docker-compose.yml` to mount or download at container start.
+- Replace `Video demo URL: <PASTE_YOUR_DEMO_VIDEO_LINK_HERE>` with your actual demo link before submitting.
+- If you use a public GitHub repository for grading, make sure the files under `banking-service/` are pushed together with this README.
 
 -----
 

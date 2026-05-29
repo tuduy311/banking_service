@@ -10,7 +10,9 @@ services:
       INTENT_SERVICE_HOST: intent-service
       INTENT_SERVICE_PORT: 50051
       INTENT_SERVICE_TIMEOUT: 10
-      OLLAMA_BASE_URL: http://ollama:11434
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://ydjfl-34-125-248-150.run.pinggy-free.link}
+      GENERATION_MODEL: ${GENERATION_MODEL:-gpt-oss:20b}
+      ENABLE_LLM_DRAFTING: ${ENABLE_LLM_DRAFTING:-true}
       ENABLE_LOCAL_INTENT_FALLBACK: "true"
     depends_on:
       - intent-service
